@@ -15,7 +15,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to user_path(@user)
         else
-            render "/users/new"
+            render new_user_path
         end
     end
 
@@ -26,6 +26,13 @@ class UsersController < ApplicationController
     end
 
     def update
+        @user.update(user_params)
+
+        if @user.save
+            redirect_to user_path(@user)
+        else
+            render edit_user_path(@user)
+        end
     end
 
     def destroy

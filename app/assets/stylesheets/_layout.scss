@@ -1,1 +1,12 @@
- @import url('https://fonts.googleapis.com/css?family=Libre+Caslon+Display|Libre+Caslon+Text&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Libre+Caslon+Text&display=swap');
+
+// Set your brand colors
+$electric-indigo: #6200EE;
+$gunmetal: #283044;
+$silver-chalice: #ADA8B6;
+
+// Update Bulma global variables
+$primary: $electric-indigo;
+$link: $electric-indigo;
+$info: $gunmetal;
+$success: $electric-indigo;
