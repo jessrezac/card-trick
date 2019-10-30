@@ -1,8 +1,4 @@
-<div class="columns is-centered">
-
-    <div class="is-one-third">
-        
-        <%= form_with(model: @user) do |f| %>
+<%= form_with(model: @user) do |f| %>
 
             <div class="field">
                 <%= f.label :name, class: "label" %>
@@ -43,12 +39,8 @@
 
             <div class="field">
                 <p class="control">
-                    <%= f.submit "Sign Up", class: "button is-success"  %>
+                    <%= f.submit class: "button is-primary"  %>
                 </p>
             </div>
         
         <% end %>
-    
-    </div>
-
-</div>
