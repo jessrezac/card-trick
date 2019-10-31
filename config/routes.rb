@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :stacks
   root to: "welcome#home"
 
   resources :users
