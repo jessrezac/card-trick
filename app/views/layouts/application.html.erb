@@ -5,15 +5,20 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'css/style.css', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all" %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <%= favicon_link_tag asset_path('favicon-16x16.png'), :rel => 'icon', :type =>  'image/png' %>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
     <link rel="manifest" href="/site.webmanifest">
   </head>
 
   <body>
+    <%= render "layouts/nav" %>
+
     <%= yield %>
+
+    <%= render "layouts/footer" %>
+
   </body>
 </html>

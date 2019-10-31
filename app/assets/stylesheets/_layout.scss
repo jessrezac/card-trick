@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Libre+Caslon+Text&display=swap');
+
+// Set your brand colors
+$electric-indigo: #6200EE;
+$gunmetal: #283044;
+$silver-chalice: #ADA8B6;
+
+// Update Bulma global variables
+$primary: $electric-indigo;
+$link: $electric-indigo;
+$info: $gunmetal;
+$success: $electric-indigo;
+$family-serif: "Libre Caslon Text", serif;
+$family-primary: $family-serif;
+$family-display: "Abril Fatface", serif;
+$title-family: $family-display;

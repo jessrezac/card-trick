@@ -1,0 +1,14 @@
+<section class="section">
+    <div class="container columns is-centered">
+
+        <div class="is-one-third">
+        
+            <h1 class="title is-1">Welcome, <%= @user.name %></h1>
+
+            <%= button_to "Edit", edit_user_path(@user), method: "get", class: "button is-primary"%>
+            <%= button_to "Logout", logout_path, class: "button is-secondary"%>
+
+        </div>
+        
+    </div>
+</section>
