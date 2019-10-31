@@ -34,7 +34,7 @@ class StacksController < ApplicationController
     private
 
     def stack_params
-        params.require(:stack).permit(:title, :image)
+        params.require(:stack).permit(:title, :thumbnail)
     end
 
     def set_stack
