@@ -1,0 +1,22 @@
+<%= form_with(model: @stack) do |f| %>
+
+    <div class="field">
+        <%= f.label :title, class: "label" %>
+        <p class="control">
+            <%= f.text_field :title, class: "input" %>
+        </p>
+    </div>
+    <div class="field">
+        <%= f.label :image, "Thumbnail", class: "label" %>
+        <p class="control">
+            <%= f.text_field :image, class: "input" %>
+        </p>
+    </div>
+
+    <div class="field">
+        <p class="control">
+            <%= f.submit class: "button is-primary"  %>
+        </p>
+    </div>
+
+<% end %>
