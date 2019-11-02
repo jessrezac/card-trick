@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cards
   resources :stacks
   root to: "welcome#home"
 
