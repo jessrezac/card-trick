@@ -1,0 +1,12 @@
+<section class="section">
+    <div class="container">
+        <h1 class="title is-1"><%= @stack.title %></h1>
+        <p class="subtitle is-2 is-italic"><%= rand(10)%> cards</p>
+        <div class="tile is-ancestor"> 
+            <!-- @todo add cards to view -->
+        </div>
+        
+        <%= button_to "Delete Stack", stack_path(@stack), method: "delete", class: "button is-secondary"%>
+
+    </div>
+</section>
