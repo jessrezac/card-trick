@@ -6,7 +6,10 @@
             <!-- @todo add cards to view -->
         </div>
         
-        <%= button_to "Delete Stack", stack_path(@stack), method: "delete", class: "button is-secondary"%>
+        <div class="buttons">
+            <%= link_to "Edit Stack", edit_stack_path(@stack), class: "button is-outlined is-primary" %>
+            <%= button_to "Delete Stack", stack_path(@stack), method: "delete", class: "button is-secondary"%>
+        </div>
 
     </div>
 </section>

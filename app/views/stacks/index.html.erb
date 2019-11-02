@@ -7,7 +7,7 @@
                     <div class="tile is-parent is-2">
                         <div class="tile is-child box">
                             <p class="icon title is-1"><i class="fas fa-stream"></i></p>
-                            <p class="title is-4"><%= stack.title %></p>
+                            <p class="title is-4"><%= link_to stack.title, stack_path(stack) %></p>
                             <p class="subtitle is-5 is-italic"><%= rand(10) %> cards</p>
                         </div>
                     </div>
