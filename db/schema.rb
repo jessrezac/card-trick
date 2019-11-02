@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_02_171502) do
+ActiveRecord::Schema.define(version: 2019_11_02_224951) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -35,9 +35,7 @@ ActiveRecord::Schema.define(version: 2019_11_02_171502) do
 
   create_table "cards", force: :cascade do |t|
     t.text "front_content"
-    t.string "front_image"
     t.text "back_content"
-    t.string "back_image"
     t.integer "mastery"
     t.integer "stack_id"
     t.datetime "created_at", precision: 6, null: false
@@ -46,7 +44,6 @@ ActiveRecord::Schema.define(version: 2019_11_02_171502) do
 
   create_table "stacks", force: :cascade do |t|
     t.string "title"
-    t.string "thumbnail"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
