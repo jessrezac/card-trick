@@ -23,7 +23,7 @@ class StacksController < ApplicationController
 
     def update
         @stack.update(stack_params)
-        redirect_to stack_path(@stack)
+        redirect_to stacks_path
     end
 
     def destroy
