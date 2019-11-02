@@ -1,0 +1,49 @@
+<%= form_with(model: @card) do |f| %>
+
+    <div class="field">
+        <p class="control">
+            <%= f.label :stack, class: "label" %>
+            <div class="select">
+                <%= collection_select(:card, :stack_id, current_user.stacks.all, :id, :title) %>
+            </div>
+        </p>
+    </div>
+
+    <div class="field">
+        <%= f.label :front_content, class: "label" %>
+        <p class="control">
+            <%= f.text_area :front_content, class: "textarea" %>
+        </p>
+    </div>
+
+    <div class="field">
+        <%= f.label :front_image, class: "label" %>
+        <p class="control">
+            <%= f.file_field :front_image, accept: "image/png,image/jpeg", class: "input" %>
+        </p>
+    </div>
+
+    <div>
+    </div>
+
+    <div class="field">
+        <%= f.label :back_content, class: "label" %>
+        <p class="control">
+            <%= f.text_area :back_content, class: "textarea" %>
+        </p>
+    </div>
+
+    <div class="field">
+        <%= f.label :back_image, class: "label" %>
+        <p class="control">
+            <%= f.file_field :back_image, accept: "image/png,image/jpeg", class: "input" %>
+        </p>
+    </div>
+
+    <div class="field">
+        <p class="control">
+            <%= f.submit class: "button is-primary"  %>
+        </p>
+    </div>
+
+<% end %>
