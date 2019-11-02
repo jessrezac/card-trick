@@ -11,7 +11,8 @@ class CardsController < ApplicationController
     end
 
     def create
-        @card = current_user.cards.create(card_params)
+        @stack = Stack.find(card_params[:stack_id])
+        @card = @stack.cards.create(card_params)
         redirect_to card_path(@card)
     end
 
@@ -34,7 +35,7 @@ class CardsController < ApplicationController
     private
 
     def card_params
-        params.require(:card).permit(:front_content, :back_content, :mastery)
+        params.require(:card).permit(:front_content, :back_content, :mastery, :front_image, :back_image, :stack_id)
     end
 
     def set_card
