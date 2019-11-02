@@ -11,8 +11,8 @@ class StacksController < ApplicationController
     end
 
     def create
-        @stack = Stack.create(stack_params)
-        redirect_to stack_path(@stack)
+        @stack = current_user.stacks.create(stack_params)
+        redirect_to stacks_path
     end
 
     def show

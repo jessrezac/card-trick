@@ -1,0 +1,18 @@
+<section class="section">
+    <div class="container">
+        <h1 class="title is-1">Stacks</h1>
+        <div class="tile is-ancestor"> 
+            <div class="tile ">
+                <% @stacks.each do |stack| %>
+                    <div class="tile is-parent is-2">
+                        <div class="tile is-child box">
+                            <p class="icon title is-1"><i class="fas fa-stream"></i></p>
+                            <p class="title is-4"><%= stack.title %></p>
+                            <p class="subtitle is-5 is-italic"><%= rand(10) %> cards</p>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</section>
