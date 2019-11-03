@@ -2,8 +2,21 @@
     <div class="container columns is-centered">
 
         <div class="is-one-third">
+
+            <h1 class="title is-1">Sign Up</h1>
             
             <%= render "form"%>
+
+            <br>
+
+            <p class="buttons is-centered is-spaced">
+                <%= link_to "/auth/google_oauth2", class: "button" do %>
+                    <span class="icon">
+                        <i class="fab fa-google"></i>
+                    </span>
+                    <span>Sign Up with Google</span>
+                <% end %>
+            </p>
 
         </div>
 
