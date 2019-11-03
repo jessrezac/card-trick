@@ -1,0 +1,29 @@
+<section class="flipper">
+    <label>
+        <input type="checkbox"  />
+
+        <div class="flashcard container">
+
+            <!-- front of card -->
+            <div class="flashside front">
+                <h1 class="title is-1">
+                    <%= @card.front_content %>
+                </h1>
+                <%= image_tag(url_for(@card.front_image)) if @card.front_image.attached? %>
+
+            </div>
+            
+            <!-- back of card -->
+            <div class="flashside back">
+                <p class="title is-1">
+                    <%= @card.front_content %>
+                </p>
+                <p class="subtitle is-3">
+                    <%= @card.back_content %>
+                </p>
+                    <%= image_tag(url_for(@card.back_image)) if @card.back_image.attached? %>
+
+            </div>
+        </div>
+    </label>
+</section>

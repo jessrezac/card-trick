@@ -1,0 +1,37 @@
+<section class="section">
+
+    <div class="container">
+
+        <h1 class="title is-1">Cards</h1>
+
+        <table class="table is-fullwidth is-hoverable">
+        
+            <thead>
+                <tr>
+                    <th>Front</th>
+                    <th>Back</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <% @cards.each do |card| %>
+
+                <tr>
+                    <th><%= card.front_content %></td>
+                    <td><%= card.back_content %></td>
+                    <td><%= link_to "Edit", edit_card_path(card), class: "button is-small" %></td>
+                    <td><%= button_to "Delete", card_path(card), method: "Delete", class: "button is-outlined is-small" %></td>
+                </tr>
+
+                <% end %>
+
+
+            </tbody>
+        </table>
+    
+    
+    </div>
+
+</section>
