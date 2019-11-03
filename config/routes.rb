@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :stacks
+
   root to: "welcome#home"
 
   resources :users
+  resources :cards
   resources :stacks
   resources :sessions, only: [:new, :create, :destroy]
 
