@@ -27,6 +27,9 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
 
+#use Google Drive Api
+gem 'google-api-client', require: 'google/apis/drive_v3'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
