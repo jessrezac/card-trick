@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :cards, only: [:edit, :update, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
 
-
+  get "/files", to: "files#index"
   get "/login", to: "sessions#new"
   post "/logout", to: "sessions#destroy"
   get "/auth/google_oauth2/callback", to: "sessions#create_from_google"
