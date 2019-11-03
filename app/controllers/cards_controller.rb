@@ -3,7 +3,7 @@ class CardsController < ApplicationController
     before_action :set_card, only: [:show, :edit, :update, :delete]
 
     def index
-        @cards = current_user.cards.all
+        @cards = Stack.find(params[:stack_id]).cards.all
     end
 
     def new
