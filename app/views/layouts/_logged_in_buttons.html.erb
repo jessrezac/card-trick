@@ -1,18 +1,16 @@
+<div class="navbar-item has-dropdown is-hoverable">
+    <a class="navbar-link">
+        <%= current_user.name %> 
+    </a>
 
-    <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-            <%= current_user.name %> 
-        </a>
+<div class="navbar-dropdown is-right">
+    <%= link_to "Profile", user_path(current_user), class: "navbar-item" %>
 
-    <div class="navbar-dropdown is-right">
-        <%= link_to "Profile", user_path(current_user), class: "navbar-item" %>
-
-        <a class="navbar-item">
-            Preferences
-        </a>
-        <hr class="navbar-divider">
-        <div class="buttons is-centered">
-            <%= link_to "Log out", logout_path, method: "post", class: "button" %>
-        </div>
+    <a class="navbar-item">
+        Preferences
+    </a>
+    <hr class="navbar-divider">
+    <div class="buttons is-centered">
+        <%= link_to "Log out", logout_path, method: "post", class: "button" %>
     </div>
-    
+</div>
