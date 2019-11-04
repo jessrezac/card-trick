@@ -13,6 +13,9 @@ class FilesController < ApplicationController
         @file_list = service.list_files
     end
 
+    def picker
+    end
+
     private
 
     def google_secret

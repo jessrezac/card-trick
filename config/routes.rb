@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
   get "/files", to: "files#index"
+  get "/picker", to: "files#picker"
   get "/login", to: "sessions#new"
   post "/logout", to: "sessions#destroy"
   get "/auth/google_oauth2/callback", to: "sessions#create_from_google"
