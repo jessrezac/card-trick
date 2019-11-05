@@ -14,6 +14,11 @@ class FilesController < ApplicationController
     end
 
     def picker
+        render "picker", layout: false
+    end
+
+    def create
+        raise param.inspect
     end
 
     private
