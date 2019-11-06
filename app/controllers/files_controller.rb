@@ -10,7 +10,7 @@ class FilesController < ApplicationController
         # Request for a new aceess token just incase it expired
         service.authorization.refresh!
         # Get a list of calendars
-        @file_list = service.list_files
+        @comment_list = service.comment_list()
     end
 
     def picker
@@ -18,7 +18,18 @@ class FilesController < ApplicationController
     end
 
     def create
-        raise param.inspect
+        service = Google::Apis::DriveV3::DriveService.new
+        # Use google keys to authorize
+        service.authorization = google_secret.to_authorization
+        # Request for a new aceess token just incase it expired
+        service.authorization.refresh!
+        # Get a list of calendars
+
+        comment_list = service.list_comments(params[:file_id], fields: 'comments')
+
+        @list = comment_list.comments.map { |comment| "#{comment.content} - #{comment.quoted_file_content.value if comment.quoted_file_content }"}
+
+        render "index"
     end
 
     private

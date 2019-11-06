@@ -1,7 +1,11 @@
 <section class="section">
     <div class="container">
     
-        <%= @file_list %>
+        <% @list.each do |item| %>
+
+        <p><%= item %></p>
+
+        <% end %>
 
         
     </div>

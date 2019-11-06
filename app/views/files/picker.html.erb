@@ -85,7 +85,11 @@
     
 
     <div id="result"></div>
-    <input type="hidden" name="fileId" id="fileId" value="">
+
+    <%= form_with(url: "/files", method: "post") do |f| %>
+        <%= hidden_field_tag(:file_id, "", id: "fileId") %>
+        <%= f.submit %>
+    <% end %>
     <!-- The Google API Loader script. -->
     <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=loadPicker"></script>
   </body>
