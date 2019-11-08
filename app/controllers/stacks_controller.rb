@@ -32,10 +32,6 @@ class StacksController < ApplicationController
         redirect_to stacks_path
     end
 
-    def import
-        raise stack_params.inspect
-    end
-
     private
 
     def stack_params

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :stacks do
+    resources :imports, only: [:new, :create]
     resources :cards, only: [:index, :show, :new, :create]
   end
   resources :cards, only: [:edit, :update, :destroy]
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
 
   get "/files", to: "files#index"
   get "/picker", to: "files#picker"
-  post "/stacks/import", to: "stacks#import"
+  # post "/stacks/import", to: "stacks#import"
   get "/login", to: "sessions#new"
   post "/logout", to: "sessions#destroy"
   get "/auth/google_oauth2/callback", to: "sessions#create_from_google"
