@@ -14,6 +14,12 @@
             </p>
 
             <div id="result"></div>
+
+            <%= form_with(model: @stack, url: stacks_import_path, method: "post", local: "true") do |f| %>
+                <%= f.hidden_field(:file_id) %>
+                <%= f.submit "Import" %>
+            <% end %>
+
             
             <%= render "form"%>
 

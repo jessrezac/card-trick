@@ -32,11 +32,19 @@ class StacksController < ApplicationController
         redirect_to stacks_path
     end
 
+    def import
+        raise stack_params.inspect
+    end
+
     private
 
     def stack_params
-        params.require(:stack).permit(:title, :thumbnail)
+        params.require(:stack).permit(:title, :thumbnail, :file_id)
     end
+
+    # def import_params
+    #    params.require(:stack).permit(:file_id)    
+    # end
 
     def set_stack
         @stack = Stack.find(params[:id])

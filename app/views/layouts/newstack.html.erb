@@ -80,8 +80,13 @@
         if (data.action == google.picker.Action.PICKED) {
           var fileId = data.docs[0].id;
           var fileName = data.docs[0].name;
-          document.getElementById('result').innerHTML = 'The user selected: ' + fileName;
-          document.getElementById('fileId').value = fileId;
+          document.getElementById('result').innerHTML = 'Ready to import a new stack from ' + fileName;
+          document.getElementById('stack_file_id').value = fileId;
+          // $.ajax({
+          //    url : "<%= stacks_import_path %>",
+          //    type : "post",
+          //    data : { fileId: JSON.stringify(fileId) }
+          // });
         }
       }
     </script>
