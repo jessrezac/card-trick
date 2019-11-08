@@ -2,10 +2,22 @@
     <div class="container columns is-centered">
         <div class="is-three-fourths">
             <h1 class="title is-1">Make a stack</h1>
+
+
+            <p class="buttons is-centered is-spaced">
+                <button  id="googleDrive" onClick="loadPicker()" class="button">    
+                    <span class="icon">
+                        <i class="fab fa-google-drive"></i>
+                    </span>
+                    <span>Create from Google Drive</span>
+                </button>
+            </p>
+
+            <div id="result"></div>
             
             <%= render "form"%>
 
         </div>
-
     </div>
 </section>
+

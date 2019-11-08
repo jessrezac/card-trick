@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta charset="utf-8" />
-    <title>Google Picker Example</title>
 
-    <script type="text/javascript">
-
+    document.getElementById("googleDrive").addEventListener("click", loadPicker());
+    
     // The Browser API key obtained from the Google API Console.
     // Replace with your own Browser API key, or your own key.
     var developerKey = '<%= ENV["GOOGLE_API_KEY"] %>';
@@ -78,19 +73,3 @@
         document.getElementById('fileId').value = fileId;
       }
     }
-    </script>
-  </head>
-  <body>
-    <button onclick="loadPicker()">Pick From Google Drive</button>
-    
-
-    <div id="result"></div>
-
-    <%= form_with(url: "/files", method: "post") do |f|%>
-        <%= hidden_field_tag(:file_id, "", id: "fileId") %>
-        <%= f.submit %>
-    <% end %>
-    <!-- The Google API Loader script. -->
-    <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=loadPicker"></script>
-  </body>
-</html>
