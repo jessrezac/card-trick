@@ -18,7 +18,7 @@ class Import
     end
 
     def request_comments
-        self.comments = @service.list_comments(self.file_id, fields: 'comments')
+        self.comments = @service.list_comments(self.file_id, fields: 'comments').comments
     end
 
 end

@@ -13,14 +13,16 @@ class ImportsController < ApplicationController
         @import.request_comments
 
         @stack = Stack.new
-        @import.comments.each do |comment|
-            card = Card.new
+
+        @import.comments.map do |comment|
+            card = @stack.cards.build
             card.front_content = comment.content
             card.back_content = comment.quoted_file_content.value if comment.quoted_file_content
+            card.comment_id = comment.id
         end
 
         render "stacks/new"
-
+    
     end
 
     private
