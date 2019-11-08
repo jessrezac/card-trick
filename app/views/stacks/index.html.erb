@@ -1,14 +1,33 @@
-<section class="section">
+<section class="section">        
     <div class="container">
-        <h1 class="title is-1">Stacks</h1>
+        <div class="level">
+            <div class="level-left">
+                <h1 class="title is-1 is-spaced">Stacks</h1>
+            </div>
+            <div class="level-right buttons">
+                <%= link_to new_import_path, class: "button is-primary" do %>
+                    <span class="icon">
+                        <i class="fab fa-google-drive"></i>
+                    </span>
+                    <span>New from Google Drive</span>
+                <% end %>
+
+                <%= link_to new_stack_path, class: "button is-light has-text-primary" do %>
+                    <span class="icon">
+                        <i class="fas fa-plus-circle"></i>
+                    </span>
+                    <span>New Stack</span>
+                <% end %>
+            </div>
+        </div>
+
         <div class="tile is-ancestor"> 
-            <div class="tile ">
                 <% @stacks.each do |stack| %>
                     <div class="tile is-parent is-2">
-                        <div class="tile is-child box">
-                            <p class="icon title"><i class="fas fa-stream"></i></p>
+                        <div class="tile is-child box has-text-centered">
+                            <p class="icon title is-1"><i class="fas fa-stream"></i></p>
                             <p class="title is-4"><%= link_to stack.title, stack_path(stack) %></p>
-                            <p class="subtitle is-5 is-italic"><%= rand(10) %> cards</p>
+                            <p class="subtitle is-5 is-italic"><%= stack.cards.count %> cards</p>
                         </div>
                     </div>
                 <% end %>
