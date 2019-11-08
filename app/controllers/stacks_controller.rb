@@ -8,6 +8,7 @@ class StacksController < ApplicationController
 
     def new
         @stack = Stack.new
+        5.times { @stack.cards.build }
     end
 
     def create
@@ -34,7 +35,16 @@ class StacksController < ApplicationController
     private
 
     def stack_params
-        params.require(:stack).permit(:title, :thumbnail)
+        params.require(:stack).permit(
+            :title, 
+            :thumbnail, 
+            :file_id, 
+            cards_attributes: [
+                :front_content,
+                :back_content,
+                :comment_id
+                ]
+            )
     end
 
     def set_stack

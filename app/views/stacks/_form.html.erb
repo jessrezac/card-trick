@@ -14,6 +14,39 @@
         </p>
     </div>
 
+    <h2 class="subtitle is-3">Cards</h2>
+
+    <%= f.fields_for :cards do |card| %>    
+
+        <div class="columns">
+
+            <div class="column">
+                <%= card.hidden_field :comment_id %>
+                <div class="field">
+                    <%= card.label :front_content, class: "label" %>
+                    <p class="control">
+                        <%= card.text_area :front_content, class: "textarea" %><br>
+                    </p>
+                </div>
+            </div>
+
+            <div class="is-divider-vertical" data-content=""></div>
+
+            <div class="column">
+                <div class="field">
+                    <%= card.label :back_content, class: "label" %>
+                    <p class="control">
+                        <%= card.text_area :back_content, class: "textarea" %><br>
+                    </p>
+                </div>
+            </div>
+        
+        </div>
+
+        <div class="is-divider"></div>
+
+    <% end %>
+
     <div class="field">
         <p class="control">
             <%= f.submit class: "button is-primary"  %>

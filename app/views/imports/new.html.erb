@@ -1,0 +1,35 @@
+<section class="section">
+    <div class="container columns is-centered">
+
+        <div class="is-three-fourths">
+
+            <h1 class="title is-1">Import a Stack</h1>
+        
+            <p class="buttons is-centered is-spaced">
+                    <button  id="googleDrive" onClick="loadPicker()" class="button">    
+                        <span class="icon">
+                            <i class="fab fa-google-drive"></i>
+                        </span>
+                        <span>Select from Google Drive</span>
+                    </button>
+                </p>
+
+                <div id="result" class="content is-centered"></div>
+
+                <%= form_with(model: @import, url: imports_path, method: "post", local: "true") do |f| %>
+                    <%= f.hidden_field(:file_id) %>
+                    <%= f.hidden_field(:file_name) %>
+
+                    <div class="field">
+                        <p class="control is-centered">
+                            <%= f.submit "Begin Import", class: "button is-primary"  %>
+                        </p>
+                    </div>
+
+                <% end %>
+        </div>
+
+    </div>
+
+</section>
+            

@@ -1,6 +1,8 @@
 <section class="section">
     <div class="container columns is-centered">
         <div class="is-one-third">
+
+            <h1 class="title is-1">Log In</h1>
             
             <%= form_with url: sessions_path do |f| %>
 
@@ -37,6 +39,19 @@
 
             <% end %>
             
+            <br>
+
+            <p class="buttons is-centered is-spaced">
+                <%= link_to "/auth/google_oauth2", class: "button" do %>
+                    <span class="icon">
+                        <i class="fab fa-google"></i>
+                    </span>
+                    <span>Log in with Google</span>
+                <% end %>
+            </p>
+
         </div>
+
     </div>
+
 </section>
