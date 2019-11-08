@@ -8,6 +8,7 @@ class StacksController < ApplicationController
 
     def new
         @stack = Stack.new
+        5.times { @stack.cards.build }
     end
 
     def create

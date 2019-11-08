@@ -14,6 +14,13 @@
         </p>
     </div>
 
+    <h2 class="subtitle is-2">Cards</h2>
+
+    <%= f.fields_for :cards do |card| %>
+        <%= card.label :front_content %>
+        <%= card.text_field :front_content %><br>
+    <% end %>
+
     <div class="field">
         <p class="control">
             <%= f.submit class: "button is-primary"  %>

@@ -14,10 +14,10 @@ class ImportsController < ApplicationController
 
         @stack = Stack.new
         @import.comments.each do |comment|
-            
+            card = Card.new
+            card.front_content = comment.content
+            card.back_content = comment.quoted_file_content.value if comment.quoted_file_content
         end
-
-        @list = comment_list.comments.map { |comment| "#{comment.content} - #{comment.quoted_file_content.value if comment.quoted_file_content }"}
 
         render "stacks/new"
 
