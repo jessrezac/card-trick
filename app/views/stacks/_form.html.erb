@@ -14,11 +14,32 @@
         </p>
     </div>
 
-    <h2 class="subtitle is-2">Cards</h2>
+    <h2 class="subtitle is-3">Cards</h2>
 
-    <%= f.fields_for :cards do |card| %>
-        <%= card.label :front_content %>
-        <%= card.text_field :front_content %><br>
+    <%= f.fields_for :cards do |card| %>    
+
+        <div class="columns">
+
+            <div class="column">
+                <div class="field">
+                    <%= card.label :front_content, class: "label" %>
+                    <p class="control">
+                        <%= card.text_field :front_content, class: "textarea" %><br>
+                    </p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="field">
+                    <%= card.label :back_content, class: "label" %>
+                    <p class="control">
+                        <%= card.text_field :back_content, class: "textarea" %><br>
+                    </p>
+                </div>
+            </div>
+        
+        </div>
+
     <% end %>
 
     <div class="field">
