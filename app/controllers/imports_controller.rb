@@ -12,7 +12,7 @@ class ImportsController < ApplicationController
         @import.authorize(google_secret)
         @import.request_comments
 
-        @stack = Stack.new
+        @stack = Stack.new(file_id: @import.file_id)
 
         @import.comments.map do |comment|
             card = @stack.cards.build

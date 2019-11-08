@@ -21,24 +21,29 @@
         <div class="columns">
 
             <div class="column">
+                <%= card.hidden_field :comment_id %>
                 <div class="field">
                     <%= card.label :front_content, class: "label" %>
                     <p class="control">
-                        <%= card.text_field :front_content, class: "textarea" %><br>
+                        <%= card.text_area :front_content, class: "textarea" %><br>
                     </p>
                 </div>
             </div>
+
+            <div class="is-divider-vertical" data-content="OR"></div>
 
             <div class="column">
                 <div class="field">
                     <%= card.label :back_content, class: "label" %>
                     <p class="control">
-                        <%= card.text_field :back_content, class: "textarea" %><br>
+                        <%= card.text_area :back_content, class: "textarea" %><br>
                     </p>
                 </div>
             </div>
         
         </div>
+
+        <div class="is-divider"></div>
 
     <% end %>
 
