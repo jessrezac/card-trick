@@ -81,9 +81,9 @@
           var fileId = data.docs[0].id;
           var fileName = data.docs[0].name;
           document.getElementById('result').innerHTML = 'Ready to import a new stack from ' + fileName;
-          document.getElementById('stack_file_id').value = fileId;
+          document.getElementById('import_file_id').value = fileId;
           // $.ajax({
-          //    url : "<%= stacks_import_path %>",
+          //    url : "<%= imports_path %>",
           //    type : "post",
           //    data : { fileId: JSON.stringify(fileId) }
           // });

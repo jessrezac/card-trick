@@ -4,11 +4,12 @@ Rails.application.routes.draw do
 
   resources :users
   resources :stacks do
-    resources :imports, only: [:new, :create]
     resources :cards, only: [:index, :show, :new, :create]
   end
   resources :cards, only: [:edit, :update, :destroy]
+  resources :imports, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
+
 
   get "/files", to: "files#index"
   get "/picker", to: "files#picker"

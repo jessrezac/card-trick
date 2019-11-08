@@ -8,7 +8,6 @@ class StacksController < ApplicationController
 
     def new
         @stack = Stack.new
-        render "new", layout: "newstack"
     end
 
     def create

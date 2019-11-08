@@ -5,7 +5,7 @@ class ImportsController < ApplicationController
     end
 
     def create
-        raise stack_params.inspect
+        raise import_params.inspect
     end
 
     private
