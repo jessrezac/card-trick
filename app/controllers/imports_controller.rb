@@ -22,7 +22,6 @@ class ImportsController < ApplicationController
         end
 
         render "stacks/new"
-    
     end
 
     private
