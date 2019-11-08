@@ -35,12 +35,17 @@ class StacksController < ApplicationController
     private
 
     def stack_params
-        params.require(:stack).permit(:title, :thumbnail, :file_id)
+        params.require(:stack).permit(
+            :title, 
+            :thumbnail, 
+            :file_id, 
+            cards_attributes: [
+                :front_content,
+                :back_content,
+                :comment_id
+                ]
+            )
     end
-
-    # def import_params
-    #    params.require(:stack).permit(:file_id)    
-    # end
 
     def set_stack
         @stack = Stack.find(params[:id])

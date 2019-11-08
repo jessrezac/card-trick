@@ -82,11 +82,7 @@
           var fileName = data.docs[0].name;
           document.getElementById('result').innerHTML = 'Ready to import a new stack from ' + fileName;
           document.getElementById('import_file_id').value = fileId;
-          // $.ajax({
-          //    url : "<%= imports_path %>",
-          //    type : "post",
-          //    data : { fileId: JSON.stringify(fileId) }
-          // });
+          document.getElementById('import_name_id').value = fileName;
         }
       }
     </script>

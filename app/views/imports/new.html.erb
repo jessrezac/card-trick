@@ -18,6 +18,7 @@
 
                 <%= form_with(model: @import, url: imports_path, method: "post", local: "true") do |f| %>
                     <%= f.hidden_field(:file_id) %>
+                    <%= f.hidden_field(:file_name) %>
 
                     <div class="field">
                         <p class="control is-centered">

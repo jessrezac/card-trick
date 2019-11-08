@@ -3,7 +3,7 @@ require 'google/api_client/client_secrets.rb'
 
 class Import
     extend ActiveModel::Naming
-    attr_accessor :file_id, :comments
+    attr_accessor :file_id, :file_name, :comments
 
     def initialize(attributes=nil)
         attributes.each {|key, value| self.send(("#{key}="), value)} if attributes

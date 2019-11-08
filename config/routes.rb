@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
 
-  get "/files", to: "files#index"
-  get "/picker", to: "files#picker"
+  # get "/files", to: "files#index"
+  # get "/picker", to: "files#picker"
   # post "/stacks/import", to: "stacks#import"
   get "/login", to: "sessions#new"
   post "/logout", to: "sessions#destroy"
