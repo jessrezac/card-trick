@@ -22,21 +22,8 @@
         </div>
 
         <div class="tile is-ancestor"> 
-                <% @stacks.each_with_index do |stack, i| %>
-                    <div class="tile is-parent is-2">
-                        <div class="tile is-child box has-text-centered">
-                            <p class="icon title is-1"><i class="fas fa-stream"></i></p>
-                            <p class="title is-4"><%= link_to stack.title, stack_path(stack) %></p>
-                            <p class="subtitle is-5 is-italic"><%= stack.cards.count %> cards</p>
-                        </div>
-                    </div>
-
-                    <% if (i+1) % 6 == 0 %>
-                        </div>
-                        <div class="tile is-ancestor">
-                    <% elsif i == @stacks.length-1 %>
-                        </div>
-                    <% end %>
+            <% @stacks.each_with_index do |stack, i| %>
+                    <%= render partial:"stacks/stack", locals: {stacks: @stacks, stack: stack, index: i} %>
                 <% end %>
             </div>
         </div>
