@@ -22,7 +22,7 @@
                     <th><%= card.front_content %></td>
                     <td><%= card.back_content %></td>
                     <td><%= link_to "Edit", edit_card_path(card), class: "button is-small" %></td>
-                    <td><%= button_to "Delete", card_path(card), method: "Delete", class: "button is-outlined is-small" %></td>
+                    <td><%= button_to "Delete", card_path(card), method: "delete", class: "button is-outlined is-small" %></td>
                 </tr>
 
                 <% end %>

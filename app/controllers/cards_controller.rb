@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
 
-    before_action :set_card, only: [:show, :edit, :update, :delete]
+    before_action :set_card, only: [:show, :edit, :update, :destroy]
 
     def index
         @cards = Stack.find(params[:stack_id]).cards.all
@@ -28,8 +28,9 @@ class CardsController < ApplicationController
     end
 
     def destroy
-        @card.delete
-        redirect_to stacks_path
+        @stack = @card.stack
+        @card.destroy
+        redirect_to stack_cards_path(@stack)
     end
 
     private
