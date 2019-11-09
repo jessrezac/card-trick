@@ -30,22 +30,28 @@
 
                 <%= image_tag(url_for(@card.back_image)) if @card.back_image.attached? %>
 
+                <%= form_with model: @attempt, class: "form" do |f| %>
+                    <%= f.hidden_field :card_id %>
+                    <%= f.hidden_field :user_id %>
+                    <%= f.hidden_field :success, value: false %>
+                    <%= f.submit  %>
+                <% end %>
+                
                 <div class="buttons is-centered has-addons">
 
-                    <button class="button is-large is-rounded">
+                    <%= button_to attempts_path, params: { attempt: {card_id: @card.id, user_id: current_user.id, success: false} }, class: "button is-large is-rounde" do %>
                         <span class="icon is-medium">
                             <i class="far fa-thumbs-down fa-2x"></i>
                         </span>
-                    </button>
+                    <% end %>
 
                     <%= link_to "Skip", stack_card_path(@card.stack, @card.next), class: "button is-large" if @card.next %>
 
-                    <button class="button is-large is-rounded">
+                    <%= button_to attempts_path, params: { attempt: {card_id: @card.id, user_id: current_user.id, success: true} }, class: "button is-large is-rounde" do %>
                         <span class="icon is-medium">
                             <i class="far fa-thumbs-up fa-2x"></i>
                         </span>
-                    </button>
-
+                    <% end %>
 
                 </div>  
 

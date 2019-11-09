@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
   resources :cards, only: [:edit, :update, :destroy]
   resources :imports, only: [:new, :create]
+  resources :attempts, only: [:create]
   resources :sessions, only: [:new, :create, :destroy]
 
 
