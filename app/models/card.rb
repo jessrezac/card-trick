@@ -1,5 +1,8 @@
 class Card < ApplicationRecord
     belongs_to :stack
+    has_many :attempts
+    has_many :users, through: :attempts
+
     has_one_attached :front_image
     has_one_attached :back_image
 
