@@ -27,7 +27,27 @@
                 <p class="subtitle is-3">
                     <%= @card.back_content %>
                 </p>
-                    <%= image_tag(url_for(@card.back_image)) if @card.back_image.attached? %>
+
+                <%= image_tag(url_for(@card.back_image)) if @card.back_image.attached? %>
+
+                <div class="buttons is-centered has-addons">
+
+                    <button class="button is-large is-rounded">
+                        <span class="icon is-medium">
+                            <i class="far fa-thumbs-down fa-2x"></i>
+                        </span>
+                    </button>
+
+                    <%= link_to "Skip", stack_card_path(@card.stack, @card.next), class: "button is-large" if @card.next %>
+
+                    <button class="button is-large is-rounded">
+                        <span class="icon is-medium">
+                            <i class="far fa-thumbs-up fa-2x"></i>
+                        </span>
+                    </button>
+
+
+                </div>  
 
             </div>
         </div>
