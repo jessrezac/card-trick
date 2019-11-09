@@ -11,10 +11,10 @@
                 </h1>
                 <%= image_tag(url_for(@card.front_image)) if @card.front_image.attached? %>
 
-                <div class="buttons is-centered">
+                <div class="buttons has-addons is-centered">
 
-                    <%= link_to "Previous", stack_card_path(@card.stack, @card.previous), class: "button" if @card.previous %>
-                    <%= link_to "Next", stack_card_path(@card.stack, @card.next), class: "button" if @card.next %>
+                    <%= link_to "Previous", stack_card_path(@card.stack, @card.previous), class: "button is-large" if @card.previous %>
+                    <%= skip_card %>
                 </div>
 
             </div>
@@ -45,7 +45,7 @@
                         </span>
                     <% end %>
 
-                    <%= link_to "Skip", stack_card_path(@card.stack, @card.next), class: "button is-large" if @card.next %>
+                    <%= skip_card %>
 
                     <%= button_to attempts_path, params: { attempt: {card_id: @card.id, user_id: current_user.id, success: true} }, class: "button is-large is-rounde" do %>
                         <span class="icon is-medium">
