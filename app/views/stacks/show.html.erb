@@ -1,7 +1,34 @@
 <section class="section">
     <div class="container">
-        <h1 class="title is-1"><%= @stack.title %></h1>
-        <p class="subtitle is-2 is-italic"><%= @stack.cards.count %> cards</p>
+            <div class="level">
+            <div class="level-left">
+                <h1 class="title is-1 is-spaced"><%= @stack.title %></h1>
+                <p class="subtitle is-4 is-italic">&nbsp;<%= @stack.cards.count %> cards</p>
+
+            </div>
+            <div class="level-right buttons">
+                <%= button_to stack_path(@stack), method: "delete", class: "button is-secondary" do %>
+                    <span class="icon">
+                        <i class="fas fa-times-circle"></i>
+                    </span>
+                    <span>Delete Stack</span>
+                <% end %>
+                <%= link_to edit_stack_path(@stack), class: "button is-outlined is-primary" do %>
+                    <span class="icon">
+                        <i class="fas fa-pencil-alt"></i>
+                    </span>
+                    <span>Edit Stack</span>
+                <% end %>
+
+                <%= link_to stack_card_path(@stack, @stack.cards.first), class: "button is-primary" do %>
+                    <span class="icon">
+                        <i class="fas fa-university"></i>
+                    </span>
+                    <span>Study</span>
+                <% end %>
+            </div>
+        </div>
+        
         <div class="tile is-ancestor"> 
             
             <% @stack.cards.each_with_index do |card, i| %>
@@ -21,8 +48,6 @@
 
         
         <div class="buttons">
-            <%= link_to "Edit Stack", edit_stack_path(@stack), class: "button is-outlined is-primary" %>
-            <%= button_to "Delete Stack", stack_path(@stack), method: "delete", class: "button is-secondary"%>
         </div>
 
     </div>

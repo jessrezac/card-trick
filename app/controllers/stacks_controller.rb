@@ -24,7 +24,7 @@ class StacksController < ApplicationController
 
     def update
         @stack.update(stack_params)
-        redirect_to stacks_path
+        redirect_to stack_path(@stack)
     end
 
     def destroy
@@ -40,6 +40,7 @@ class StacksController < ApplicationController
             :thumbnail, 
             :file_id, 
             cards_attributes: [
+                :id,
                 :front_content,
                 :back_content,
                 :comment_id

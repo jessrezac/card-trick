@@ -2,6 +2,8 @@
     <div class="container columns is-centered">
 
         <div class="is-one-third">
+
+            <%= render partial: "layouts/errors", locals: {model_instance: @user} %>
             
             <%= render "form"%>
 

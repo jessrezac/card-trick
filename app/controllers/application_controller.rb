@@ -9,6 +9,14 @@ class ApplicationController < ActionController::Base
         session.include?(:user_id)
     end
 
+    def require_login
+        unless logged_in?
+            redirect_to root_path
+        end
+    end
+
     helper_method :current_user
     helper_method :logged_in?
+    helper_method :require_login
+    helper_method :restrict_to_owner
 end

@@ -2,7 +2,19 @@
 
     <div class="container">
 
-        <h1 class="title is-1">Cards</h1>
+        <div class="level">
+            <div class="level-left">
+                <h1 class="title is-1 is-spaced">Cards in <%= @cards.first.stack.title %></h1>
+            </div>
+            <div class="level-right buttons">
+                <%= link_to new_stack_card_path(@cards.first.stack), class: "button is-primary" do %>
+                    <span class="icon">
+                        <i class="fas fa-plus-circle"></i>
+                    </span>
+                    <span>New Card</span>
+                <% end %>
+            </div>
+        </div>
 
         <table class="table is-fullwidth is-hoverable">
         
@@ -22,7 +34,7 @@
                     <th><%= card.front_content %></td>
                     <td><%= card.back_content %></td>
                     <td><%= link_to "Edit", edit_card_path(card), class: "button is-small" %></td>
-                    <td><%= button_to "Delete", card_path(card), method: "Delete", class: "button is-outlined is-small" %></td>
+                    <td><%= button_to "Delete", card_path(card), method: "delete", class: "button is-outlined is-small" %></td>
                 </tr>
 
                 <% end %>

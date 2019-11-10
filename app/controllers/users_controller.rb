@@ -9,16 +9,17 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.create(user_params)
+        @user = User.new(user_params)
 
-        if @user.save
+        if @user.valid?
+            @user.save
             session[:user_id] = @user.id
-            redirect_to user_path(@user)
+            redirect_to stacks_path
         else
-            render new_user_path
+            render "new"
         end
     end
-
+    
     def show
     end
 
@@ -31,12 +32,13 @@ class UsersController < ApplicationController
         if @user.save
             redirect_to user_path(@user)
         else
-            render edit_user_path(@user)
+            render "edit"
         end
     end
 
     def destroy
         @user.destroy
+        session[:user_id].delete
         redirect_to root_path
     end
 

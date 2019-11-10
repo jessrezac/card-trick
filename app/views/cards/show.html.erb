@@ -11,6 +11,12 @@
                 </h1>
                 <%= image_tag(url_for(@card.front_image)) if @card.front_image.attached? %>
 
+                <div class="buttons has-addons is-centered">
+
+                    <%= link_to "Previous", stack_card_path(@card.stack, @card.previous), class: "button is-large" if @card.previous %>
+                    <%= skip_card %>
+                </div>
+
             </div>
             
             <!-- back of card -->
@@ -21,7 +27,33 @@
                 <p class="subtitle is-3">
                     <%= @card.back_content %>
                 </p>
-                    <%= image_tag(url_for(@card.back_image)) if @card.back_image.attached? %>
+
+                <%= image_tag(url_for(@card.back_image)) if @card.back_image.attached? %>
+
+                <%= form_with model: @attempt, class: "form" do |f| %>
+                    <%= f.hidden_field :card_id %>
+                    <%= f.hidden_field :user_id %>
+                    <%= f.hidden_field :success, value: false %>
+                    <%= f.submit  %>
+                <% end %>
+                
+                <div class="buttons is-centered has-addons">
+
+                    <%= button_to attempts_path, params: { attempt: {card_id: @card.id, user_id: current_user.id, success: false} }, class: "button is-large is-rounde" do %>
+                        <span class="icon is-medium">
+                            <i class="far fa-thumbs-down fa-2x"></i>
+                        </span>
+                    <% end %>
+
+                    <%= skip_card %>
+
+                    <%= button_to attempts_path, params: { attempt: {card_id: @card.id, user_id: current_user.id, success: true} }, class: "button is-large is-rounde" do %>
+                        <span class="icon is-medium">
+                            <i class="far fa-thumbs-up fa-2x"></i>
+                        </span>
+                    <% end %>
+
+                </div>  
 
             </div>
         </div>
