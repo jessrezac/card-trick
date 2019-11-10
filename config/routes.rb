@@ -11,8 +11,7 @@ Rails.application.routes.draw do
   resources :attempts, only: [:create]
   resources :sessions, only: [:new, :create, :destroy]
 
-
-  # get "/files", to: "files#index"
+  # get "/files", to: "files#index"5
   # get "/picker", to: "files#picker"
   # post "/stacks/import", to: "stacks#import"
   get "/login", to: "sessions#new"
