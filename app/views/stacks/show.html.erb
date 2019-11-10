@@ -9,18 +9,18 @@
             <div class="level-right buttons">
                 <%= button_to stack_path(@stack), method: "delete", class: "button is-secondary" do %>
                     <span class="icon">
-                        <i class="fas fa-backspace"></i>
+                        <i class="fas fa-times-circle"></i>
                     </span>
                     <span>Delete Stack</span>
                 <% end %>
                 <%= link_to edit_stack_path(@stack), class: "button is-outlined is-primary" do %>
                     <span class="icon">
-                        <i class="fas fa-marker"></i>
+                        <i class="fas fa-pencil-alt"></i>
                     </span>
                     <span>Edit Stack</span>
                 <% end %>
 
-                <%= link_to new_import_path, class: "button is-primary" do %>
+                <%= link_to stack_card_path(@stack, @stack.cards.first), class: "button is-primary" do %>
                     <span class="icon">
                         <i class="fas fa-university"></i>
                     </span>
