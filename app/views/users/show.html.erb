@@ -5,8 +5,12 @@
         
             <h1 class="title is-1">Welcome, <%= @user.name %></h1>
 
-            <%= button_to "Edit", edit_user_path(@user), method: "get", class: "button is-primary"%>
-            <%= button_to "Logout", logout_path, class: "button is-secondary"%>
+            <p class="content is-medium">You have attempted <%= Attempt.user_card_count(current_user) %> cards.</p>
+
+            <div class="buttons">
+                <%= button_to "Edit", edit_user_path(@user), method: "get", class: "button is-primary"%> 
+                <%= button_to "Logout", logout_path, class: "button is-secondary"%>
+            </div>
 
         </div>
         
