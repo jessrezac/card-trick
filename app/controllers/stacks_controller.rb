@@ -1,5 +1,5 @@
 class StacksController < ApplicationController
-
+    before_action :require_log_in
     before_action :set_stack, only: [:show, :edit, :update, :destroy]
     before_action :authorize_user_by_stack, only: [:show, :edit, :update, :destroy]
 

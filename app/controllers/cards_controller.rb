@@ -1,6 +1,7 @@
 class CardsController < ApplicationController
 
     before_action :set_card, only: [:show, :edit, :update, :destroy]
+    before_action :require_log_in
     before_action :authorize_user_by_stack, only: [:index, :show, :new, :create]
     before_action :authorize_user_by_card, only: [:edit, :update, :destroy]
 

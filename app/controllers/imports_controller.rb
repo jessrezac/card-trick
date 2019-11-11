@@ -2,6 +2,7 @@ require 'google/apis/drive_v3'
 require 'google/api_client/client_secrets.rb'
 
 class ImportsController < ApplicationController
+    before_action :require_log_in
 
     def new
         @import = Import.new
