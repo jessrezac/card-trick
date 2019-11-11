@@ -5,10 +5,6 @@
 
 <div class="navbar-dropdown is-right">
     <%= link_to "Profile", user_path(current_user), class: "navbar-item" %>
-
-    <a class="navbar-item">
-        Preferences
-    </a>
     <hr class="navbar-divider">
     <div class="buttons is-centered">
         <%= link_to "Log out", logout_path, method: "post", class: "button" %>

@@ -1,9 +1,12 @@
 class CardsController < ApplicationController
 
     before_action :set_card, only: [:show, :edit, :update, :destroy]
+    before_action :require_log_in
+    before_action :authorize_user_by_stack, only: [:index, :show, :new, :create]
+    before_action :authorize_user_by_card, only: [:edit, :update, :destroy]
 
     def index
-        @cards = Stack.find(params[:stack_id]).cards.all
+        @cards = @stack.cards.all
     end
 
     def new
@@ -13,7 +16,11 @@ class CardsController < ApplicationController
     def create
         @stack = Stack.find(card_params[:stack_id])
         @card = @stack.cards.create(card_params)
-        redirect_to card_path(@card)
+        redirect_to stack_card_path(@card.stack, @card)
+
+        unless @stack.user == current_user
+            redirect_to new_stack_path(@stack)
+        end
     end
 
     def show
@@ -41,5 +48,18 @@ class CardsController < ApplicationController
 
     def set_card
         @card = Card.find(params[:id])
+    end
+
+    def authorize_user_by_stack
+        @stack = Stack.find(params[:stack_id])
+        unless @stack.user == current_user
+            redirect_to stacks_path
+        end
+    end
+
+    def authorize_user_by_card
+        unless @card.stack.user == current_user
+            redirect_to stacks_path
+        end
     end
 end

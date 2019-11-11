@@ -1,4 +1,5 @@
 class AttemptsController < ApplicationController
+    before_action :require_log_in, only: [:create]
 
     def create
         Attempt.create(attempt_params)
