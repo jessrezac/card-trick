@@ -29,9 +29,13 @@
                         <%= card.text_area :front_content, class: "textarea" %><br>
                     </p>
                 </div>
+                <div class="field">
+                    <%= f.label :front_image, class: "label" %>
+                    <p class="control">
+                        <%= f.file_field :front_image, accept: "image/png,image/jpeg", class: "input" %>
+                    </p>
+                </div>
             </div>
-
-            <div class="is-divider-vertical" data-content=""></div>
 
             <div class="column">
                 <div class="field">
@@ -40,11 +44,24 @@
                         <%= card.text_area :back_content, class: "textarea" %><br>
                     </p>
                 </div>
+                <div class="field">
+                    <%= f.label :back_image, class: "label" %>
+                    <p class="control">
+                        <%= f.file_field :back_image, accept: "image/png,image/jpeg", class: "input" %>
+                    </p>
+                </div>
+            </div>
+
+            <div class="column is-1">
+                <%= card.label :_destroy, class: "delete" %>
+                <%= card.check_box :_destroy %>
             </div>
         
         </div>
 
-        <div class="is-divider"></div>
+        <br>
+
+        <hr class="is-divider">
 
     <% end %>
 

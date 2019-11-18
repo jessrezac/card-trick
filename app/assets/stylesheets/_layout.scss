@@ -16,3 +16,6 @@ $family-display: "Abril Fatface", serif;
 $title-family: $family-display;
 
 // Image customizations
+hr.is-divider {
+    border: 1px solid $primary;
+}
