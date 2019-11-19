@@ -45,7 +45,8 @@ class StacksController < ApplicationController
                 :id,
                 :front_content,
                 :back_content,
-                :comment_id
+                :comment_id,
+                :_destroy
                 ]
             )
     end
