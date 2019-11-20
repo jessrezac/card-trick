@@ -5,4 +5,5 @@ class Stack < ApplicationRecord
 
     has_one_attached :thumbnail
 
+    scope :by_card_count, -> {joins(:cards).group('cards.stack_id').order("count(cards.stack_id) DESC")}
 end

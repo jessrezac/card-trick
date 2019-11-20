@@ -34,6 +34,11 @@ class StacksController < ApplicationController
         redirect_to stacks_path
     end
 
+    def all_stacks
+        @stacks = Stack.by_card_count
+        render "index"
+    end
+
     private
 
     def stack_params
